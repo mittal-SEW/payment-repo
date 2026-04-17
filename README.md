@@ -12,5 +12,3 @@ This is the payment module I was working on. It lets you take credit cards and b
 - It uses React and Vite.
 - You can put it into other projects if you want.
 - I added some fake data so you can see how it looks.
-
-Let me know if you have any questions!
