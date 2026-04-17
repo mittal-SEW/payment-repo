@@ -1,16 +1,58 @@
-# React + Vite
+# Payment Module Processor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a standalone, plug-and-playable Payment Module designed to be integrated into any React application. It supports Credit Card and Bank Transfer payment methods.
 
-Currently, two official plugins are available:
+## Features
+- **Plug-and-Play**: Can be integrated as a standard React component or via Module Federation.
+- **Isolated Testing**: Running the project in development mode displays the payment processor in a clean, isolated environment.
+- **Form Validation**: Real-time validation for credit cards (Luhn-style logic, CVV, expiry) and bank accounts.
+- **Responsive Design**: Built with modern CSS (Glassmorphism/Minimalism) that adapts to host application styles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Quick Start for Developers
 
-## React Compiler
+To run this project locally:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/mittal-SEW/payment-repo.git
+   cd payment-repo
+   ```
 
-## Expanding the ESLint configuration
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. **Run in development mode**:
+   ```bash
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:5001`. You will see the payment processor rendered with mock data for testing.
+
+## Integration Guide
+
+To use this module in your own project, import the `Payment` component:
+
+```javascript
+import Payment from './Payment';
+
+const MyPage = () => {
+  const handlePay = async (data) => {
+    // Submit payment data to your API
+    console.log(data);
+  };
+
+  return (
+    <Payment 
+      accountId="YOUR_ACCOUNT_ID"
+      currentBalance={100.00}
+      onPay={handlePay}
+    />
+  );
+};
+```
+
+## Module Federation (Remote)
+This project is configured as a Remote for Module Federation. It exposes the `./Payment` component.
+See `vite.config.js` for details.

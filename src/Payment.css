@@ -1,7 +1,3 @@
-/* ===== Payment Module Styles ===== */
-/* This CSS is scoped to the payment module only. */
-/* It uses CSS variables from the host app if available, with fallbacks. */
-
 .payment-module-wrapper {
   --pm-primary: var(--primary, #0056b3);
   --pm-primary-light: var(--primary-light, #4dabf5);
