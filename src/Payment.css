@@ -406,3 +406,15 @@
   padding: 1.5rem;
   border: 1px solid var(--pm-border);
 }
+
+/* iFrame Overrides */
+.is-iframe .payment-module-wrapper .card {
+  box-shadow: none !important;
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+.is-iframe {
+  height: 100%;
+}
